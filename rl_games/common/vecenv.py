@@ -217,6 +217,7 @@ vecenv_config = {}
 def register(config_name, func):
     vecenv_config[config_name] = func
 
+# use this function to create the enviornment which is already registered in the vecenv_config
 def create_vec_env(config_name, num_actors, **kwargs):
     vec_env_name = configurations[config_name]['vecenv_type']
     return vecenv_config[vec_env_name](config_name, num_actors, **kwargs)
